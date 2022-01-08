@@ -1,0 +1,13 @@
+.content_area {
+    display: flex;
+
+    margin: 20px 0;
+
+    .list_area {
+        min-width: 30%;
+    }
+
+    .video_area {
+        width: 100%;
+    }
+}

@@ -16,11 +16,11 @@ const ClientPage = () => {
                 <Header />
             </header>
             <main>
-                <section>
-                    <div>
+                <section className={styles.content_area}>
+                    <div className={styles.list_area}>
                         <List />
                     </div>
-                    <div>
+                    <div className={styles.video_area}>
                         <Video />
                     </div>
                 </section>

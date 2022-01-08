@@ -1,0 +1,29 @@
+.footer_area {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 200px;
+    background-color: #313131;
+    color: #fff;
+    font-size: 6.5rem;
+    font-weight: 500;
+
+    p {
+        &::after {
+            content: '|';
+            margin: 0 100px;
+        }
+
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .marquee {
+        width: 100%;
+        height: 100%;
+    }
+}
