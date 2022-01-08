@@ -1,5 +1,8 @@
 .video_area {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     width: calc(100% - 30px);
     height: 957px;
@@ -9,8 +12,14 @@
     overflow: hidden;
 
     video {
-        position: relative;
-        top: -200px;
         width: 100%;
+        min-height: 100%;
+        height: auto;
+        background: #000;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
     }
 }
