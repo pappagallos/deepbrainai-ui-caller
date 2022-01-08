@@ -1,0 +1,28 @@
+.header_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 0 50px;
+
+    .logo_area {
+        svg {
+            width: 600px;
+            height: auto;
+        }
+    }
+
+    .timer_area {
+        .date {
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        .time {
+            font-size: 5.5rem;
+            font-weight: 700;
+        }
+    }
+}
