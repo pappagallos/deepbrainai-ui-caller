@@ -13,9 +13,14 @@
     font-weight: 500;
 
     p {
+        &::before {
+            content: '▶︎';
+            margin-right: 30px;
+        }
+
         &::after {
-            content: '|';
-            margin: 0 100px;
+            content: ' ';
+            margin-right: 300px;
         }
 
         width: 100%;
