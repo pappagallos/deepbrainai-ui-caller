@@ -23,4 +23,20 @@
         height: 100%;
         transform: scale(1.02);
     }
+
+    .ai_video_area {
+        position: absolute;
+        top: -200px;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show {
+        opacity: 1;
+        transition: 1s;
+    }
 }
