@@ -24,6 +24,10 @@ function Video() {
             socket.emit('message', { message: 'connected' });
         });
 
+        socket.on('progress', (data) => {
+            console.log('progress', data[0]);
+        });
+
         // 서버로부터 show_ai_human 메세지가 오면 창구번호, 대기자 이름, 비디오 URL을 받아 클라이언트에게 보여준다.
         socket.on('show_ai_human', (data) => {
             const { number, name, video_url } = data[0];
