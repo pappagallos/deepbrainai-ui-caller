@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-// import io from 'socket.io-client';
+import React from 'react';
 
 // components
 import Header from '../../components/header/Header';
@@ -10,27 +9,27 @@ import Footer from '../../components/footer/Footer';
 // styles
 import styles from '../../styles/ClientPage.module.scss';
 
-const ClientPage = () => {
-    return (
-        <>
-            <header>
-                <Header />
-            </header>
-            <main>
-                <section className={styles.content_area}>
-                    <div className={styles.list_area}>
-                        <List />
-                    </div>
-                    <div className={styles.video_area}>
-                        <Video />
-                    </div>
-                </section>
-            </main>
-            <footer>
-                <Footer />
-            </footer>
-        </>
-    )
+function ClientPage() {
+  return (
+    <>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <section className={styles.content_area}>
+          <div className={styles.list_area}>
+            <List />
+          </div>
+          <div className={styles.video_area}>
+            <Video />
+          </div>
+        </section>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
+  );
 }
 
 export default ClientPage;
