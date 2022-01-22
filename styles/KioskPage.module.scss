@@ -1,0 +1,49 @@
+.content_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 20px 0;
+    width: 100%;
+    height: calc(100vh - 40px - 60px - 116px); // margin top bottom 20 20, padding top bottom 30 30, header 116
+
+    .message {
+        margin-top: -150px;
+        font-size: 9rem;
+        font-weight: 700;
+        text-align: center;
+        color: #000;
+    }
+
+    .client_name_area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -150px;
+
+        .client_name {
+            width: 60%;
+            height: 300px;
+            border: none;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            text-align: center;
+            font-size: 10rem;
+            box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.2);
+            outline: none;
+        }
+
+        .submit {
+            width: 400px;
+            height: 300px;
+            font-size: 10rem;
+            color: #fff;
+            border: none;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: #5548ff;
+            cursor: pointer;
+            box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.2);
+        }
+    }
+}

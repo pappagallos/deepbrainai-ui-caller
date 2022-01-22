@@ -1,9 +1,13 @@
 import React from 'react';
+import {useRecoilValue} from 'recoil';
+import {callListState} from '../../recoil/atoms';
 
 // styles
 import styles from './scss/List.module.scss';
 
 function List() {
+  const callList = useRecoilValue(callListState);
+
   return (
     <div className={styles.list_area}>
       <div className={styles.list_title}>
@@ -56,37 +60,17 @@ function List() {
       </div>
 
       <div className={styles.list_body}>
-        <div className={styles.row}>
-          <div className={styles.number}>
-            <span>1</span>
-          </div>
-          <div className={styles.name}>
-            <span>이우진</span>
-          </div>
-        </div>
-        <div className={styles.row}>
-          <div className={styles.number}>
-            <span>1</span>
-          </div>
-          <div className={styles.name}>
-            <span>이우진</span>
-          </div>
-        </div>
-        <div className={styles.row}>
-          <div className={styles.number}>
-            <span>1</span>
-          </div>
-          <div className={styles.name}>
-            <span>이우진</span>
-          </div>
-        </div>
-        <div className={styles.row}>
-          <div className={styles.number}>
-            <span>1</span>
-          </div>
-          <div className={styles.name}>
-            <span>이우진</span>
-          </div>
+        <div className={styles.row_area}>
+          {callList.map(item => (
+            <div className={styles.row} key={item.video}>
+              <div className={styles.number}>
+                <span>{item.counterNumber}</span>
+              </div>
+              <div className={styles.name}>
+                <span>{item.name}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

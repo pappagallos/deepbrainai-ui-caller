@@ -93,7 +93,7 @@
     .list_body {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-start;
 
         width: inherit;
         height: 690px;
@@ -104,6 +104,7 @@
 
         .row {
             display: flex;
+            margin: 20px 0;
 
             width: 100%;
             font-size: 7rem;

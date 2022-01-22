@@ -1,44 +1,19 @@
 import classNames from 'classnames';
 import React, {useEffect, useState} from 'react';
-import io from 'socket.io-client';
 import ReactPlayer from 'react-player';
 
 // styles
+import {useRecoilValue} from 'recoil';
 import styles from './scss/Video.module.scss';
+import {videoState} from '../../recoil/atoms';
 
 function Video() {
   const [showVideo, setShowVideo] = useState(false); // AI 비디오 보여주기 여부
-  const [videoInfo, setVideoInfo] = useState({
-    callNumber: null, // 발급받은 대기 순번
-    counterNumber: null, // 창구번호
-    name: null, // 대기자 이름
-    video: null, // 비디오 URL
-  });
+  const videoInfo = useRecoilValue(videoState);
 
   useEffect(() => {
-    const socket = io('http://localhost:8005', {
-      reconnectionDelayMax: 10000,
-    });
-
-    socket.on('connect', () => {
-      socket.emit('message', {message: 'connected'});
-    });
-
-    // 서버로부터 show_ai_human 메세지가 오면 창구번호, 대기자 이름, 비디오 URL을 받아 클라이언트에게 보여준다.
-    socket.on('show_ai_human', data => {
-      const {counterNumber, name, video} = data[0];
-      setVideoInfo({
-        counterNumber,
-        name,
-        video,
-      });
-      setShowVideo(true);
-    });
-
-    return () => {
-      socket.close();
-    };
-  }, []);
+    setShowVideo(true);
+  }, [videoInfo]);
 
   /**
    * AI 비디오 가리기 함수
