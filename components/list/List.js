@@ -4,13 +4,13 @@ import React from 'react';
 import styles from './scss/List.module.scss';
 
 function List() {
-    return (
-        <div className={styles.list_area}>
-            <div className={styles.list_title}>
-                <span>호출 안내</span>
-            </div>
-            {/* 테이블 태그 border-radius 가 적용이 안되어 div 태그로 전환 */}
-            {/* <table>
+  return (
+    <div className={styles.list_area}>
+      <div className={styles.list_title}>
+        <span>호출 안내</span>
+      </div>
+      {/* 테이블 태그 border-radius 가 적용이 안되어 div 태그로 전환 */}
+      {/* <table>
                 <colgroup>
                     <col width='30%' />
                     <col width='*' />
@@ -44,53 +44,53 @@ function List() {
                     </tr>
                 </tbody>
             </table> */}
-            <div className={styles.list_head}>
-                <ul>
-                    <li>
-                        <span>창구</span>
-                    </li>
-                    <li>
-                        <span>호출이름</span>
-                    </li>
-                </ul>
-            </div>
+      <div className={styles.list_head}>
+        <ul>
+          <li>
+            <span>창구</span>
+          </li>
+          <li>
+            <span>호출이름</span>
+          </li>
+        </ul>
+      </div>
 
-            <div className={styles.list_body}>
-                <div className={styles.row}>
-                    <div className={styles.number}>
-                        <span>1</span>
-                    </div>
-                    <div className={styles.name}>
-                        <span>이우진</span>
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.number}>
-                        <span>1</span>
-                    </div>
-                    <div className={styles.name}>
-                        <span>이우진</span>
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.number}>
-                        <span>1</span>
-                    </div>
-                    <div className={styles.name}>
-                        <span>이우진</span>
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.number}>
-                        <span>1</span>
-                    </div>
-                    <div className={styles.name}>
-                        <span>이우진</span>
-                    </div>
-                </div>
-            </div>
+      <div className={styles.list_body}>
+        <div className={styles.row}>
+          <div className={styles.number}>
+            <span>1</span>
+          </div>
+          <div className={styles.name}>
+            <span>이우진</span>
+          </div>
         </div>
-    )
+        <div className={styles.row}>
+          <div className={styles.number}>
+            <span>1</span>
+          </div>
+          <div className={styles.name}>
+            <span>이우진</span>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.number}>
+            <span>1</span>
+          </div>
+          <div className={styles.name}>
+            <span>이우진</span>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.number}>
+            <span>1</span>
+          </div>
+          <div className={styles.name}>
+            <span>이우진</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default List;

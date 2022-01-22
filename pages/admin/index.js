@@ -9,27 +9,27 @@ import Footer from '../../components/footer/Footer';
 // styles
 import styles from '../../styles/AdminPage.module.scss';
 
-const AdminPage = () => {
-    return (
-        <>
-            <header>
-                <Header />
-            </header>
-            <main>
-                <section>
-                    <div>
-                        <List />
-                    </div>
-                    <div>
-                        <Video />
-                    </div>
-                </section>
-            </main>
-            <footer>
-                <Footer />
-            </footer>
-        </>
-    )
+function AdminPage() {
+  return (
+    <>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <section>
+          <div>
+            <List />
+          </div>
+          <div>
+            <Video />
+          </div>
+        </section>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
+  );
 }
 
 export default AdminPage;
