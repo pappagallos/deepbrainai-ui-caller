@@ -26,3 +26,24 @@
         }
     }
 }
+
+@media screen and (max-width: 1600px) {
+    .logo_area {
+        svg {
+            width: 400px !important;
+        }
+    }
+
+    .timer_area {
+        position: relative;
+        top: -8px;
+
+        .date {
+            font-size: 3rem !important;
+        }
+
+        .time {
+            font-size: 3.5rem !important;
+        }
+    }
+}

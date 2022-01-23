@@ -48,6 +48,8 @@ function List() {
                     </tr>
                 </tbody>
             </table> */}
+
+      {/* 대기자 호출 리스트 헤더 */}
       <div className={styles.list_head}>
         <ul>
           <li>
@@ -59,6 +61,7 @@ function List() {
         </ul>
       </div>
 
+      {/* 대기자 호출 리스트 */}
       <div className={styles.list_body}>
         <div className={styles.row_area}>
           {callList.map(item => (

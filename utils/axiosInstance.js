@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: process.env.DEEPBRAIN_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

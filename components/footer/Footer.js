@@ -7,6 +7,8 @@ import styles from './scss/Footer.module.scss';
 function Footer() {
   return (
     <div className={styles.footer_area}>
+      {/* marquee 라이브러리 */}
+      {/* TODO. 지금은 하드코딩된 텍스트로 보여주고 있지만 추후에 mongoDB 로부터 나열할 소식들을 가져와 뿌려주기 */}
       <Marquee className={styles.marquee} speed={300}>
         <p>
           서울시 선발‧지원으로 GITEX ‘슈퍼노바 챌린지’ 참가 딥브레인AI…700여개

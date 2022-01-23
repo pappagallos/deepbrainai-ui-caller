@@ -11,17 +11,28 @@ function KioskPage() {
   const [clientName, setClientName] = useState('');
   const [isComplete, setIsComplete] = useState(false);
 
+  /**
+   * 상황 1. 사용자가 예약한 뒤 예약완료 화면을 보여주고 있는 상황
+   */
   useEffect(() => {
     if (isComplete) {
+      // 약 2초 뒤에 예약완료 화면을 다시 가리기
       const timeout = setTimeout(() => {
         clearTimeout(timeout);
         setIsComplete(false);
-      }, 3000);
+      }, 2000);
     }
   }, [isComplete]);
 
+  /**
+   * 키오스크 예약자 등록 함수
+   */
   const handleSubmit = async () => {
     try {
+      // 이름이 비어있거나 이름이 2글자 미만일 경우 return
+      if (clientName === '' && clientName.length >= 2) return;
+
+      // API 호출하여 예약자 등록한 뒤 완료되면 예약완료 화면을 보여주기
       await axiosInstance.post('/client', {name: clientName});
       setIsComplete(true);
     } catch (error) {
@@ -33,11 +44,13 @@ function KioskPage() {
 
   return (
     <>
+      {/* 공통 헤더 컴포넌트 */}
       <header>
         <Header />
       </header>
       <main>
         <section className={styles.content_area}>
+          {/* 예약완료 화면 및 예약 화면 */}
           {isComplete ? (
             <p className={styles.message}>
               예약되었습니다.

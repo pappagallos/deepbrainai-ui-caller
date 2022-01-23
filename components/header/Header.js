@@ -18,7 +18,13 @@ function Header() {
     };
   }, []);
 
+  /**
+   * 시간에 관한 유틸리티 함수
+   */
   const timer = {
+    /**
+     * 1초마다 화면을 시간을 업데이트 해주어 화면을 리렌더링 해주기 위한 interval 함수
+     */
     start: () => {
       if (timerInterval) timer.stop();
 
@@ -30,9 +36,16 @@ function Header() {
         }, 1000),
       );
     },
+    /**
+     * 화면에 보여줄 시간 포맷을 업데이트 해주는 함수
+     */
     update: () => {
       setDpTimer(timer.toLocaleString());
     },
+    /**
+     * 화면에 보여줄 시간 포맷으로 가공해주는 함수
+     * @returns { object }
+     */
     toLocaleString: () => {
       const dateObj = new Date();
 
@@ -85,6 +98,9 @@ function Header() {
         time: `${hour}:${minute}`,
       };
     },
+    /**
+     * timer.start() 한 시점에서 생성된 interval 를 제거해주는 함수
+     */
     stop: () => {
       clearInterval(timerInterval);
     },
@@ -92,9 +108,11 @@ function Header() {
 
   return (
     <div className={styles.header_area}>
+      {/* 로고 */}
       <div className={styles.logo_area}>
         <Logo />
       </div>
+      {/* 시간 */}
       <div className={styles.timer_area}>
         <span className={styles.date}>{dpTimer?.date}</span>
         <span className={styles.time}>{dpTimer?.time}</span>
