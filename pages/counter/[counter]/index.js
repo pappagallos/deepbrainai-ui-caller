@@ -12,6 +12,7 @@ function CounterPage() {
   const router = useRouter();
   const [isCall, setIsCall] = useState(false);
   const [waitingList, setWaitingList] = useState([]);
+  const [progress, setProgress] = useState('waiting');
 
   useEffect(() => {
     fetchClientList();
@@ -28,14 +29,22 @@ function CounterPage() {
     });
 
     // 새로운 대기자가 등록되었을 경우
+    socket.on('progress', progress => {
+      console.log('[대기자 호출중, 전달받은 데이터]', progress[0]);
+      setProgress(progress[0].data.progress);
+    });
+
+    // 새로운 대기자가 등록되었을 경우
     socket.on('add_client', client => {
       console.log('[대기자 추가, 전달받은 데이터]', client);
-      addClient(client);
+      updateClientList(client);
     });
 
     // 대기자 호출이 완료되었을 경우
     socket.on('complete_client', client => {
       console.log('[대기자 호출 성공, 전달받은 데이터]', client);
+      updateClientList(client);
+      setProgress('waiting');
     });
 
     // 대기자가 삭제되었을 경우
@@ -66,7 +75,7 @@ function CounterPage() {
     }
   };
 
-  const addClient = async client => {
+  const updateClientList = async client => {
     setWaitingList(client[0]);
     console.log('[대기자 추가]', waitingList);
   };
@@ -120,7 +129,7 @@ function CounterPage() {
                     })}
                     onClick={() => call(client._id, router.query.counter)}
                   >
-                    호출
+                    {isCall ? progress : '호출'}
                   </button>
                 )}
               </div>

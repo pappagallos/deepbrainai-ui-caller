@@ -1,5 +1,4 @@
 import 'react-app-polyfill/ie11';
-
 import wrapper from '../store/configureStore';
 
 import '../styles/globals.scss';
