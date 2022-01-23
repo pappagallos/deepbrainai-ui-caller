@@ -34,7 +34,7 @@ function CounterPage() {
     });
 
     // 대기자 호출이 완료되었을 경우
-    socket.on('add_client', client => {
+    socket.on('complete_client', client => {
       console.log('[대기자 호출 성공, 전달받은 데이터]', client);
     });
 
@@ -67,16 +67,7 @@ function CounterPage() {
   };
 
   const addClient = async client => {
-    const {id, name} = client[0];
-    const newWaitingList = [...waitingList];
-
-    newWaitingList.push({
-      id,
-      name,
-    });
-
-    setWaitingList(newWaitingList);
-
+    setWaitingList(client[0]);
     console.log('[대기자 추가]', waitingList);
   };
 
