@@ -10,7 +10,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb",
     "plugin:prettier/recommended"
   ],
   "settings": {
@@ -33,12 +32,7 @@
     "react/jsx-one-expression-per-line": 0,
     "no-nested-ternary": 0,
     "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "off",
-    "import/no-named-as-default": "off",
-    "import/no-named-as-default-member": "off",
-    "no-use-before-define": "off",
-    "import/prefer-default-export": "off",
-    "import/no-import-module-exports": "off"
+    "react/prop-types": "off"
   },
   "globals": {
     "React": "writable"

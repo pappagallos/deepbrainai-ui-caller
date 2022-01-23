@@ -49,7 +49,7 @@ function KioskPage() {
         <Header />
       </header>
       <main>
-        <section className={styles.content_area}>
+        <div className={styles.content_area}>
           {/* 예약완료 화면 및 예약 화면 */}
           {isComplete ? (
             <p className={styles.message}>
@@ -77,7 +77,7 @@ function KioskPage() {
               </button>
             </div>
           )}
-        </section>
+        </div>
       </main>
     </>
   );

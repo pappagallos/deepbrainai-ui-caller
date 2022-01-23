@@ -1,12 +1,11 @@
 import React from 'react';
-import {useRecoilValue} from 'recoil';
-import {callListState} from '../../recoil/atoms';
+import {useSelector} from 'react-redux';
 
 // styles
 import styles from './scss/List.module.scss';
 
 function List() {
-  const callList = useRecoilValue(callListState);
+  const {callList} = useSelector(state => state.callList);
 
   return (
     <div className={styles.list_area}>
@@ -64,16 +63,17 @@ function List() {
       {/* 대기자 호출 리스트 */}
       <div className={styles.list_body}>
         <div className={styles.row_area}>
-          {callList.map(item => (
-            <div className={styles.row} key={item.video}>
-              <div className={styles.number}>
-                <span>{item.counterNumber}</span>
+          {callList.length > 0 &&
+            callList.map(item => (
+              <div className={styles.row} key={item.video}>
+                <div className={styles.number}>
+                  <span>{item.counterNumber}</span>
+                </div>
+                <div className={styles.name}>
+                  <span>{item.name}</span>
+                </div>
               </div>
-              <div className={styles.name}>
-                <span>{item.name}</span>
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

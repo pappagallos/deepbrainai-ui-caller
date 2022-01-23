@@ -3,21 +3,20 @@ import React, {useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
 
 // styles
-import {useRecoilValue} from 'recoil';
 import styles from './scss/Video.module.scss';
-import {videoState} from '../../recoil/atoms';
+import {useSelector} from 'react-redux';
 
 function Video() {
   const [showVideo, setShowVideo] = useState(false); // AI 비디오 보여주기 여부
-  const videoInfo = useRecoilValue(videoState);
+  const {calling} = useSelector(state => state.calling);
 
   /**
-   * 상황 1. videoInfo 가 변경되었을 경우 소켓 서버로부터 대기자에 대한 호출이 일어났다는 의미
+   * 상황 1. calling 이 변경되었을 경우 소켓 서버로부터 대기자에 대한 호출이 일어났다는 의미
    *        호출이 일어나면 변환이 완료된 AI 영상을 보여주기
    */
   useEffect(() => {
     setShowVideo(true);
-  }, [videoInfo]);
+  }, [calling]);
 
   /**
    * AI 비디오 가리기 함수
@@ -56,14 +55,14 @@ function Video() {
       <div
         className={classNames([styles.ai_video_area, showVideo && styles.show])}
       >
-        {showVideo && (
+        {calling && showVideo && (
           <ReactPlayer
             width='100%'
             height='100vh'
             playing
             playsinline
             controls
-            url={videoInfo.video}
+            url={calling.video}
             onEnded={hideVideo}
             style={localStyles.video}
           />

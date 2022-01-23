@@ -17,7 +17,7 @@ function ClientPage() {
         <Header />
       </header>
       <main>
-        <section className={styles.content_area}>
+        <div className={styles.content_area}>
           {/* 호출 리스트 컴포넌트 */}
           <div className={styles.list_area}>
             <List />
@@ -26,7 +26,7 @@ function ClientPage() {
           <div className={styles.video_area}>
             <Video />
           </div>
-        </section>
+        </div>
       </main>
       {/* 공통 푸터 컴포넌트 */}
       <footer>
